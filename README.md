@@ -1,5 +1,4 @@
-
-# Digispark
+# Digispark (NOT WORKING FOR NOW)
 
 - Download latest release from here https://github.com/micronucleus/micronucleus/releases 
 
