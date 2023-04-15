@@ -8,7 +8,7 @@ Download latest release from here https://github.com/micronucleus/micronucleus/r
 $ unzip ~/Downloads/micronucleus-cli-master-882e7b4a
 $ sudo cp micronucleus-cli-master-882e7b4a/micronucleus /usr/local/bin/micronucleus
 $ export PATH=$PATH:/usr/local/bin/micronucleus
-$ tinygo flash -target=digispark main.go
+$ tinygo flash -target=digispark digispark/digispark.go
 INSERT USB STICK
 ```
 
@@ -43,7 +43,7 @@ Create new target in `/usr/local/lib/tinygo/targets/xiao-new.json`
 After this, the flash way still does not work (at least for me) so we need to build and move `.uf2` file to XIAO device
 
 ```console
-$ tinygo build -o firmware.uf2 -target=xiao-new main.go && sudo mkdir -p /media/xiao && sudo mount /dev/sda /media/xiao && sudo cp firmware.uf2 /media/xiao
+$ tinygo build -o xiao/firmware.uf2 -target=xiao-new xiao/xiao.go && sudo mkdir -p /media/xiao && sudo mount /dev/sda /media/xiao && sudo cp xiao/firmware.uf2 /media/xiao
 ```
 
 In order to reset the device we need to double TAP de RST pins like this https://wiki.seeedstudio.com/Seeeduino-XIAO/#enter-bootloader-mode
