@@ -42,8 +42,10 @@ Create new target in `/usr/local/lib/tinygo/targets/xiao-new.json`
 
 After this, the flash way still does not work (at least for me) so we need to build and move `.uf2` file to XIAO device
 
+The following shows an example to emulate a keyboard by opening xcalc on my device (using i3wm with dmenu)
+
 ```console
-$ tinygo build -o xiao/firmware.uf2 -target=xiao-new xiao/xiao.go && sudo mkdir -p /media/xiao && sudo mount /dev/sda /media/xiao && sudo cp xiao/firmware.uf2 /media/xiao
+$ tinygo build -o firmware.uf2 -target=xiao-new openxcalc.go && sudo mkdir -p /media/xiao && sudo mount /dev/sda /media/xiao && sudo cp firmware.uf2 /media/xiao
 ```
 
 In order to reset the device we need to double TAP de RST pins like this https://wiki.seeedstudio.com/Seeeduino-XIAO/#enter-bootloader-mode
